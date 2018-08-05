@@ -1,0 +1,61 @@
+\documentclass[9pt,twoside,lineno]{pnas-new}
+\templatetype{preprintgeneral}
+
+%=============================================================================
+% document information
+%=============================================================================
+% manuscript title
+\title{Your Main Manuscript Title}
+
+% Use numbers for affiliations, letters to show equal authorship (if applicable) and to indicate the corresponding author
+\author[1,a]{First Author}
+\author[1,2]{Second Author} 
+\author[1,3]{Third Author}
+
+% affiliation addresses
+\affil[1]{Center for Music and Science, University of Cambridge, 11 West Road, CB39DP}
+\affil[2]{Affiliation Two}
+\affil[3]{Affiliation Three}
+
+% corresponding authors
+\correspondingauthor{To whom correspondence should be addressed: researcher@cam.ac.uk}
+\dates{Compiled: \today}
+
+
+%=============================================================================
+% begin document
+%=============================================================================
+\begin{document}
+
+%=============================================================================
+% preamble
+%=============================================================================
+{\parindent0pt
+\infopage  
+\customabstract
+\significance
+}% restore indentation
+
+%=============================================================================
+% main (introduction, results, discussion)
+%=============================================================================
+\main
+
+%=============================================================================
+% supporting information & references
+%=============================================================================
+\suppportinginfo
+\clearpage
+\bibliography{preprintarticle}
+\clearpage
+
+%=============================================================================
+% methods & supplementary materials
+%=============================================================================
+\methods
+\supmat
+
+%=============================================================================
+% end document
+%=============================================================================
+\end{document}

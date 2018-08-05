@@ -1,0 +1,129 @@
+%=============================================================================
+% Style file for generating preprint articles that uses the PNAS class file
+%%% For use with pnas-new.cls
+%=============================================================================
+\NeedsTeXFormat{LaTeX2e}
+\ProvidesPackage{preprintgeneral}[2018/08/05 v1.1 general psych preprint style format]
+
+%% Set whether the abstract is set into the first column
+\setboolean{shortarticle}{true} 
+
+%% Remove "DRAFT" watermark
+\setboolean{displaywatermark}{false}
+
+%% column format
+\onecolumn
+\setboolean{singlecolumn}{true} 
+
+%% Set colors
+\definecolor{color2}{RGB}{130,0,0} % color
+
+% counter functions
+\RequirePackage{totcount,xpatch}
+\regtotcounter{section}
+\regtotcounter{figure}
+\regtotcounter{table}
+\regtotcounter{NAT@ctr}  %% natbib bibliography
+
+%=============================================================================
+% Info page
+%=============================================================================
+\newcommand{\infopage}{%
+
+% show-hide page numbering on information page
+% \pagenumbering{gobble}
+% \thispagestyle{empty}
+
+\section*{Title:}
+\@title
+ 
+\section*{Authors and Affiliations:}
+{\raggedright \@author\par}
+
+\section*{Correspondence:}
+\@correspondingauthor
+
+\section*{Document information:}
+\noindent\@dates \\
+Figures in main text: \total{figure} \\
+Tables in main text: \total{table} \\
+References: \total{NAT@ctr} 
+
+\clearpage
+}
+
+%=============================================================================
+% abstract
+%=============================================================================
+\newcommand{\customabstract}{%
+{\noindent\huge\sffamily\bfseries Abstract\par}\vspace{5mm}
+\input{content/abstract}
+\clearpage
+}
+
+%=============================================================================
+% significance statement
+%=============================================================================
+\newcommand{\significance}{%
+{\noindent\huge\sffamily\bfseries Significance Statement\par}\vspace{5mm}
+\input{content/significance}
+\clearpage
+}
+
+%=============================================================================
+% main content - intro, results, discussion
+%=============================================================================
+\newcommand{\main}{%
+
+% introduction
+{\noindent\huge\sffamily\bfseries Introduction\par}\vspace{5mm}
+\input{content/introduction}
+
+% results
+\vspace{6mm}{\noindent\huge\sffamily\bfseries Results\par}\vspace{5mm}
+\input{content/results}
+
+% discussion
+\vspace{6mm}{\noindent\huge\sffamily\bfseries Discussion\par}\vspace{5mm}
+\input{content/discussion}
+
+}
+
+%=============================================================================
+% supporting information
+%=============================================================================
+\newcommand{\suppportinginfo}{%
+\clearpage
+\input{content/suppportinginfo}
+\clearpage
+}
+
+%=============================================================================
+% methods
+%=============================================================================
+\newcommand{\methods}{%
+{\noindent\huge\sffamily\bfseries Methods\par}\vspace{5mm}
+\input{content/methods}
+\clearpage
+}
+
+%=============================================================================
+% supplementary materials
+%=============================================================================
+\newcommand{\supmat}{%
+{\noindent\huge\sffamily\bfseries Supplementary Materials\par}\vspace{5mm}
+\input{content/supplementarymat}
+\clearpage
+}
+
+%=============================================================================
+% general - footers and references
+%=============================================================================
+% page numbers
+\fancyfoot[RO,LE]{\bfseries\sffamily\thepage\space of \pageref{LastPage}}
+
+%% Reset reference list settings
+\renewcommand{\bibsection}{\section*{\refname}}
+\renewcommand{\bibfont}{}
+
+\endinput
