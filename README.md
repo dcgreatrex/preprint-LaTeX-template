@@ -1,7 +1,7 @@
 # preprint-LaTeX-template
 
 ## Overview
-A LaTeX template designed to make it easier to produce experimental report preprints prior to sending to journals such as [J. Neurosci, PNAS, frontiers, cell, Trends Cogn. Sci]**. 
+A LaTeX template designed to make it easier to produce experimental report preprints prior to sending to journals such as [J. Neurosci, PNAS, frontiers, cell, Trends Cogn. Sci][*]. 
 This template has been adapted from the standard open source PNAS LaTeX class template found [here](http://www.pnas.org/page/authors/latex).
 
 The template copies preprint formats found on the following sites:
@@ -15,8 +15,8 @@ The template design is based on the following preprint papers:
 [4](https://psyarxiv.com/svf6c/)
 
 ## Motivation
-Recently, authors in the timing and decision making literatures are publishing experimental reports to either psyarxiv or biorxiv prior to them being accepted by journals listed in *.
-They are using generic report structures that are fixed across publication and presumably makes it easier to refashion preprint content into target publication templates.
+Recently, authors in the timing and decision making literatures are publishing experimental papers to either psyarxiv or biorxiv prior to them being accepted by journals listed in [*].
+They are using a generic report structure that remains fixed across publications and presumably makes it easier to refashion preprint content into target publication templates.
 The motivation of this repository is to deliver a LaTeX template that 
 a) copies their preprint style, and
 b) makes it easier to structure report content prior to it being accepted by a journal.
@@ -30,7 +30,7 @@ b) makes it easier to structure report content prior to it being accepted by a j
   * author
   * affil
   * correspondingauthor
-* add report content into the corresponding content .tex files saved in the subdirectory named 'content'. Content files currently available:
+* Save your report content in the corresponding .tex files saved in the subdirectory named 'content'. Content files currently available:
   * Abstract (abstract.tex)
   * Significance statement (significance.tex)
   * Introduction (introduction.tex)
@@ -40,8 +40,9 @@ b) makes it easier to structure report content prior to it being accepted by a j
   * Methods (methods.tex)
   * Supplementary materials (supplementarymat.tex)
 * Save report images (.jpeg, .png) into the subdirectory named 'images'.
-* Add cited bibliographic information to the file called 'preprintarticle.bib'. 
+* Add bibliographic information to the file called 'preprintarticle.bib'. 
 Alternatively you can reference an alternative master .bib file that you have saved on your machine.
-To do this replace <\bibliography{preprintarticle}> with <\bibliography{XXX}> where XXX is the name of your master .bib file on line 49 of 'preprintarticle.tex'.
-Also, ensure that the saved location of your master .bib file appears somewhere on your LaTeX search path.
-* Generate the .pdf file by running 'make' on preprintarticle.tex. Alternately you can open 'preprintarticle.tex' and press 'run' LaTeX editors such as TeXworks or TeXstudio.
+To do this replace [\bibliography{preprintarticle}] with [\bibliography{XXX}] (ignoring squared brackets) where XXX is the name of your master .bib file on line 49 of 'preprintarticle.tex'.
+Ensure that the saved location of your master .bib file appears either in the project repository or somewhere on your start-up LaTeX search path.
+* Generate the .pdf file by running 'make' on preprintarticle.tex. Alternately, open 'preprintarticle.tex' in LaTeX editors such as TeXworks or TeXstudio and press 'run'. 
+preprintarticle.pdf will then appear in the project repository. 
