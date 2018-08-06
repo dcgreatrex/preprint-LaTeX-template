@@ -5,8 +5,8 @@ A LaTeX template designed to make it easier to produce experimental report prepr
 This template has been adapted from the standard open source PNAS LaTeX class template found [here](http://www.pnas.org/page/authors/latex).
 
 The template copies preprint formats found on the following sites:
-* [psyarxiv](https://psyarxiv.com)
-* [biorxiv](https://www.biorxiv.org)
+* [psyarxiv](https://psyarxiv.com){:target="_blank"}
+* [biorxiv](https://www.biorxiv.org){:target="_blank"}
 
 The template design is based on the following preprint papers:
 [1](https://www.biorxiv.org/content/early/2018/01/12/247460)
