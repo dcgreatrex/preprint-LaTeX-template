@@ -1,11 +1,12 @@
 # preprint-LaTeX-template
 
 ## Overview
-A LaTeX template designed to make it easier and faster to produce experimental report preprints prior to sending to journals such as [J. Neurosci, PNAS, frontiers, cell, Trends Cogn. Sci]. This template has been adapted from the standard open source PNAS LaTeX template found [here](http://www.pnas.org/page/authors/latex).
+A LaTeX template designed to make it easier to produce experimental report preprints prior to sending to journals such as [J. Neurosci, PNAS, frontiers, cell, Trends Cogn. Sci]**. 
+This template has been adapted from the standard open source PNAS LaTeX class template found [here](http://www.pnas.org/page/authors/latex).
 
 The template copies preprint formats found on the following sites:
-* <a href="https://psyarxiv.com" target="_blank">psyarxiv</a>
-* <a href="https://www.biorxiv.org" target="_blank">biorxiv</a>
+* [psyarxiv](https://psyarxiv.com)
+* [biorxiv](https://www.biorxiv.org)
 
 The template design is based on the following preprint papers:
 [1](https://www.biorxiv.org/content/early/2018/01/12/247460)
@@ -14,6 +15,33 @@ The template design is based on the following preprint papers:
 [4](https://psyarxiv.com/svf6c/)
 
 ## Motivation
-Recently, authors in the timing & decision making literature are publishing experimental reports to either psyarxiv or biorxiv prior to them being accepted by a journal.
+Recently, authors in the timing and decision making literatures are publishing experimental reports to either psyarxiv or biorxiv prior to them being accepted by journals listed in *.
+They are using generic report structures that are fixed across publication and presumably makes it easier to refashion preprint content into target publication templates.
+The motivation of this repository is to deliver a LaTeX template that 
+a) copies their preprint style, and
+b) makes it easier to structure report content prior to it being accepted by a journal.
 
 ## Quickstart
+* Clone or download all content in this repository
+* Install LaTeX on your machine. Follow instructions found [here](https://www.latex-project.org/get/).
+* cd into the cloned respository and open the main tex file called 'preprintarticle.tex'. 
+* In 'preprintarticle.tex' add title, author and affiliation information to the variables named:
+  * title
+  * author
+  * affil
+  * correspondingauthor
+* add report content into the corresponding content .tex files saved in the subdirectory named 'content'. Content files currently available:
+  * Abstract (abstract.tex)
+  * Significance statement (significance.tex)
+  * Introduction (introduction.tex)
+  * Results (results.tex)
+  * Discussion (discussion.tex)
+  * Supporting information (supportinginfo.tex)
+  * Methods (methods.tex)
+  * Supplementary materials (supplementarymat.tex)
+* Save report images (.jpeg, .png) into the subdirectory named 'images'.
+* Add cited bibliographic information to the file called 'preprintarticle.bib'. 
+Alternatively you can reference an alternative master .bib file that you have saved on your machine.
+To do this replace <\bibliography{preprintarticle}> with <\bibliography{XXX}> where XXX is the name of your master .bib file on line 49 of 'preprintarticle.tex'.
+Also, ensure that the saved location of your master .bib file appears somewhere on your LaTeX search path.
+* Generate the .pdf file by running 'make' on preprintarticle.tex. Alternately you can open 'preprintarticle.tex' and press 'run' LaTeX editors such as TeXworks or TeXstudio.
